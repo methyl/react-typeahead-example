@@ -17,9 +17,8 @@ App = require './app'
 routes = (
   <Route handler={App}>
     <Route name="hello" handler={HelloWorld} path="/" />
-    <Route name="styleguide" handler={StyleGuide} path="/styleguide" />
   </Route>
 )
-Router.run(routes, (Handler) ->
+Router.run(routes, Router.HistoryLocation, (Handler) ->
   React.render <Handler/>, document.body
 )
